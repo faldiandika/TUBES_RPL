@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TUBES_RPL - Gaya Utama & Nuansa Klasik Beranda Kampus
+   TUBES_RPL - Gaya Modern Minimalis & Beranda Interaktif Kampus
    ========================================================================== */
 
 html {
@@ -13,61 +13,166 @@ html {
 
 body {
     margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: #eef1f6;
-    color: #1e293b;
-    line-height: 1.5;
+    font-family: "Plus Jakarta Sans", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f4f6f8;
+    color: #18181b;
+    line-height: 1.55;
     opacity: 1;
     transition: opacity 0.22s ease;
+    -webkit-font-smoothing: antialiased;
 }
 
 body.is-leaving {
     opacity: 0;
 }
 
-/* Navigasi */
+/* ==========================================================================
+   Navbar Modern Minimalis
+   ========================================================================== */
+.nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(24, 24, 27, 0.08);
+}
+
 .nav {
-    position: relative;
-    z-index: 20;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #172554;
     padding: 13px 24px;
-    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.16);
+    gap: 16px;
 }
 
-.nav a {
-    color: #f8fafc;
-    text-decoration: none;
-    margin-left: 18px;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-}
-
-.nav a:hover {
-    color: #fde68a;
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
 }
 
 .nav .brand {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #18181b;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
     margin: 0;
 }
 
-.admin-nav {
-    background: #0f172a;
+.brand-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #1e3a8a;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Wadah utama halaman non-beranda */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #52525b;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #18181b;
+}
+
+.nav-links a.active {
+    font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-sub {
+    color: #52525b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-sub:hover {
+    color: #18181b;
+}
+
+.nav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1px solid #d4d4d8;
+    background: #ffffff;
+    color: #18181b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-pill:hover {
+    background: #f4f4f5;
+    border-color: #a1a1aa;
+}
+
+/* Navigasi khusus halaman dalam panel admin */
+.admin-nav {
+    background: #0f172a;
+    color: #f8fafc;
+    max-width: none;
+    padding: 13px 24px;
+}
+
+.admin-nav a {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 0.92rem;
+}
+
+.admin-nav a:hover {
+    color: #ffffff;
+}
+
+.admin-nav .brand {
+    color: #ffffff;
+    margin-left: 0;
+}
+
+/* ==========================================================================
+   Wadah Utama
+   ========================================================================== */
 .container {
     position: relative;
     z-index: 2;
-    max-width: 980px;
-    margin: 28px auto;
-    padding: 0 18px;
+    max-width: 1020px;
+    margin: 32px auto;
+    padding: 0 20px;
 }
 
 .main-home {
@@ -78,101 +183,129 @@ body.is-leaving {
     padding: 0;
 }
 
-/* Tombol */
+/* ==========================================================================
+   Tombol Modern
+   ========================================================================== */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     background: #1e3a8a;
     color: #ffffff;
-    padding: 9px 18px;
+    padding: 10px 20px;
     border: 1px solid transparent;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     font-size: 0.92rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
     background: #1d4ed8;
-    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.28);
+    box-shadow: 0 6px 18px rgba(30, 58, 138, 0.25);
+}
+
+.btn-primary-pill {
+    border-radius: 999px;
+    padding: 11px 24px;
+    background: #1e3a8a;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+}
+
+.btn-primary-pill:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-ghost-pill {
+    border-radius: 999px;
+    padding: 11px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #18181b;
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
+}
+
+.btn-ghost-pill:hover {
+    background: #ffffff;
+    color: #09090b;
+    transform: translateY(-1px);
 }
 
 .btn.kecil {
     padding: 5px 11px;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
 }
 
 .btn.bahaya {
-    background: #b91c1c;
+    background: #dc2626;
 }
 
 .btn.bahaya:hover {
-    background: #991b1b;
+    background: #b91c1c;
 }
 
-.btn-ghost {
-    background: rgba(15, 23, 42, 0.35);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.65);
-}
-
-.btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: none;
-}
-
-/* Grid & Kartu */
+/* ==========================================================================
+   Grid & Kartu Modern
+   ========================================================================== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
 }
 
 .card {
     display: block;
     background: #ffffff;
     padding: 18px;
-    border-radius: 8px;
+    border-radius: 14px;
     text-decoration: none;
     color: inherit;
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid rgba(24, 24, 27, 0.08);
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.28s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(30, 58, 138, 0.35);
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    transform: translateY(-5px);
+    border-color: rgba(30, 58, 138, 0.3);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
 }
 
 .card h3 {
     margin: 6px 0 6px;
-    color: #0f172a;
+    font-size: 1.03rem;
+    font-weight: 600;
+    color: #18181b;
 }
 
 .card p {
     margin: 0 0 6px;
-    color: #475569;
-    font-size: 0.92rem;
+    color: #52525b;
+    font-size: 0.9rem;
 }
 
 .card small {
-    color: #64748b;
+    color: #71717a;
 }
 
 .card-img {
     width: 100%;
-    height: 150px;
+    height: 156px;
     object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 12px;
     display: block;
 }
 
 /* ==========================================================================
-   Beranda Klasik: Slide Profil Kampus & Panel Jelajahi Fakultas
+   Beranda Modern: Latar Belakang Zoom & Blur Saat Scroll
    ========================================================================== */
 .home-page {
     position: relative;
@@ -181,14 +314,18 @@ body.is-leaving {
 
 .hero-fixed-bg {
     position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    inset: -24px;
+    width: calc(100% + 48px);
+    height: calc(100% + 48px);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     z-index: 0;
     pointer-events: none;
+    transform: scale(1);
+    filter: blur(0px);
+    will-change: transform, filter;
+    transition: transform 0.12s linear, filter 0.12s linear;
 }
 
 .hero-fixed-overlay {
@@ -198,25 +335,23 @@ body.is-leaving {
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(10, 19, 38, 0.45) 0%,
-        rgba(10, 19, 38, 0.72) 52%,
-        rgba(10, 19, 38, 0.88) 100%
+        rgba(10, 17, 30, 0.44) 0%,
+        rgba(10, 17, 30, 0.62) 60%,
+        rgba(10, 17, 30, 0.90) 100%
     );
     z-index: 1;
     pointer-events: none;
 }
 
-/* Slide 1: Hanya teks profil kampus yang tampil penuh pada pandangan pertama */
+/* Slide 1: Profil Kampus Rata Tengah Modern */
 .hero-stage {
     position: relative;
     z-index: 2;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 58px);
     display: flex;
     align-items: center;
-    padding: 56px 28px 88px;
-    border: none;
-    border-radius: 0;
+    padding: 48px 24px 84px;
     background: transparent;
 }
 
@@ -225,13 +360,13 @@ body.is-leaving {
 }
 
 .hero-content {
-    max-width: 820px;
+    max-width: 780px;
     margin: 0 auto;
     width: 100%;
+    text-align: center;
     will-change: opacity, transform;
 }
 
-/* Animasi timbul berkelas saat pertama kali membuka beranda */
 .hero-content.hero-enter {
     opacity: 0;
     transform: translateY(28px);
@@ -246,83 +381,90 @@ body.is-leaving {
 
 .hero-eyebrow {
     display: inline-block;
-    font-size: 0.78rem;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.76rem;
     font-weight: 600;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #fde68a;
-    margin-bottom: 12px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    color: #fef08a;
+    margin-bottom: 16px;
 }
 
 .hero-content h1 {
-    margin: 0 0 16px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.1rem, 4.4vw, 3.25rem);
-    line-height: 1.15;
+    margin: 0 0 18px;
+    font-size: clamp(2.2rem, 4.6vw, 3.5rem);
+    line-height: 1.12;
     font-weight: 700;
+    letter-spacing: -0.03em;
     color: #ffffff;
-    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 
 .hero-content p {
-    margin: 0 0 26px;
-    font-size: 1.03rem;
-    line-height: 1.7;
-    color: #f8fafc;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+    max-width: 660px;
+    margin: 0 auto 30px;
+    font-size: 1.02rem;
+    line-height: 1.72;
+    color: #f4f4f5;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
 .hero-actions {
     display: flex;
-    gap: 12px;
+    justify-content: center;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
-/* Slide 2+: Meluncur naik menutupi slide profil saat di-scroll */
+/* Slide 2+: Jendela Konten Meluncur di Depan Latar Bayangan */
 .home-foreground {
     position: relative;
     z-index: 3;
-    padding: 0 18px 64px;
+    padding: 0 20px 68px;
 }
 
 .surface-section {
-    max-width: 980px;
-    margin: 0 auto 28px;
-    padding: 32px 28px;
+    max-width: 1020px;
+    margin: 0 auto 32px;
+    padding: 36px 32px;
     background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: none;
-    border-radius: 14px;
-    box-shadow: 0 18px 44px rgba(8, 15, 32, 0.32);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(9, 13, 24, 0.36);
 }
 
 .section-head {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    text-align: center;
 }
 
 .section-head h2 {
-    margin: 0 0 6px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.6rem;
-    color: #0f172a;
+    margin: 0 0 8px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #18181b;
 }
 
 .section-head p {
     margin: 0;
-    color: #475569;
-    font-size: 0.95rem;
+    color: #52525b;
+    font-size: 0.96rem;
 }
 
 .home-page .card {
     background: #ffffff;
 }
 
-/* Animasi slide naik mulus saat di-scroll */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(68px);
+    transform: translateY(64px);
     transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -339,58 +481,60 @@ body.is-leaving {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .filter input,
 .filter select {
-    padding: 8px 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background: #fff;
+    padding: 9px 14px;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 0.92rem;
 }
 
 .detail {
     background: #ffffff;
     border-collapse: collapse;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
 }
 
 .detail th,
 .detail td {
     text-align: left;
-    padding: 12px 14px;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 13px 16px;
+    border-bottom: 1px solid #e4e4e7;
     vertical-align: top;
 }
 
 .detail th {
-    width: 180px;
-    color: #334155;
-    background: #f8fafc;
+    width: 185px;
+    color: #3f3f46;
+    background: #fafafa;
 }
 
 .detail-img {
     width: 100%;
-    max-height: 360px;
+    max-height: 380px;
     object-fit: cover;
-    border-radius: 8px;
-    margin: 14px 0;
+    border-radius: 12px;
+    margin: 16px 0;
 }
 
 .maps {
     width: 100%;
     height: 360px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 .alert {
-    padding: 10px 14px;
-    border-radius: 6px;
+    padding: 12px 16px;
+    border-radius: 8px;
     margin-bottom: 16px;
 }
 
@@ -414,22 +558,23 @@ body.is-leaving {
 .login-box {
     background: #ffffff;
     padding: 32px;
-    border-radius: 8px;
-    width: 340px;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+    border-radius: 14px;
+    width: 350px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
 }
 
 .login-box label {
     display: block;
     margin-top: 12px;
+    font-weight: 500;
 }
 
 .login-box input {
     width: 100%;
-    padding: 8px 10px;
+    padding: 9px 12px;
     margin-top: 4px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
 }
 
 .login-box .btn {
@@ -448,27 +593,27 @@ body.is-leaving {
     width: 100%;
     border-collapse: collapse;
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
 }
 
 .tabel th,
 .tabel td {
     text-align: left;
-    padding: 10px 12px;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 11px 14px;
+    border-bottom: 1px solid #e4e4e7;
     vertical-align: middle;
 }
 
 .tabel th {
-    background: #f8fafc;
+    background: #fafafa;
 }
 
 .thumb {
     height: 40px;
     width: auto;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 form.inline {
@@ -478,9 +623,9 @@ form.inline {
 .form {
     background: #ffffff;
     padding: 24px;
-    border-radius: 8px;
+    border-radius: 12px;
     max-width: 580px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
 }
 
 .form label {
@@ -494,15 +639,16 @@ form.inline {
 .form select,
 .form textarea {
     width: 100%;
-    padding: 8px 10px;
+    padding: 9px 12px;
     margin-top: 4px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    font-family: inherit;
 }
 
 .form small {
     display: block;
-    color: #64748b;
+    color: #71717a;
     margin-top: 4px;
 }
 
@@ -522,19 +668,39 @@ form.inline {
     width: auto;
     display: block;
     margin-bottom: 6px;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .footer {
     position: relative;
     z-index: 3;
     text-align: center;
-    padding: 22px 16px;
-    color: #64748b;
+    padding: 24px 16px;
+    color: #71717a;
     font-size: 0.9rem;
 }
 
 .home-page ~ .footer {
-    color: #e2e8f0;
+    color: #e4e4e7;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 720px) {
+    .nav {
+        flex-wrap: wrap;
+        padding: 12px 16px;
+    }
+    .nav-left {
+        gap: 16px;
+    }
+    .nav-links {
+        gap: 14px;
+    }
+    .nav-sub {
+        display: none;
+    }
+    .surface-section {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
 }
