@@ -1,6 +1,9 @@
-<h1>Profil Kampus</h1>
+<div class="admin-page-head">
+    <span class="admin-eyebrow">Pengaturan Situs</span>
+    <h1>Profil Kampus</h1>
+</div>
 
-<form class="form" method="post" action="index.php?c=adminprofil&a=simpan" enctype="multipart/form-data">
+<form class="form admin-form-card" method="post" action="index.php?c=adminprofil&a=simpan" enctype="multipart/form-data">
     <?= csrf_field() ?>
 
     <label for="nama">Nama Kampus</label>
@@ -20,7 +23,7 @@
     <small>Format JPG, PNG, atau WEBP. Maksimal 2 MB.</small>
 
     <div class="form-aksi">
-        <button class="btn" type="submit">Simpan</button>
-        <a href="index.php?c=admin&a=dashboard">Kembali</a>
+        <button class="btn btn-primary-pill" type="submit">Simpan</button>
+        <a class="admin-cancel-link" href="index.php?c=admin&a=dashboard">Kembali</a>
     </div>
 </form>

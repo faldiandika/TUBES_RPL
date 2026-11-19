@@ -1,6 +1,9 @@
-<h1><?= e($judul) ?></h1>
+<div class="admin-page-head">
+    <span class="admin-eyebrow">Manajemen Fakultas</span>
+    <h1><?= e($judul) ?></h1>
+</div>
 
-<form class="form" method="post" action="index.php?c=adminfakultas&a=simpan" enctype="multipart/form-data">
+<form class="form admin-form-card" method="post" action="index.php?c=adminfakultas&a=simpan" enctype="multipart/form-data">
     <?= csrf_field() ?>
     <input type="hidden" name="id" value="<?= (int)$f['id'] ?>">
 
@@ -18,7 +21,7 @@
     <small>Format JPG, PNG, atau WEBP. Maksimal 2 MB.</small>
 
     <div class="form-aksi">
-        <button class="btn" type="submit">Simpan</button>
-        <a href="index.php?c=adminfakultas">Batal</a>
+        <button class="btn btn-primary-pill" type="submit">Simpan</button>
+        <a class="admin-cancel-link" href="index.php?c=adminfakultas">Batal</a>
     </div>
 </form>
