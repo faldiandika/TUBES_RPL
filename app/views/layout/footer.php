@@ -1,4 +1,4 @@
 </main>
-<footer class="footer">&copy; <?= date('Y') ?> Profil Program Studi Universitas Tadulako</footer>
+<footer class="footer">Panel Admin &middot; Profil Program Studi Untad</footer>
 </body>
 </html>
