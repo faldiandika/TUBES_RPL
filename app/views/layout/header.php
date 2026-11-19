@@ -21,19 +21,4 @@ $mainClass = ($currentC === 'home') ? 'main-home' : 'container';
     </div>
 </nav>
 <main class="<?= e($mainClass) ?>">
-```[cite: 45]
 
-### Tambahan Kecil di `public/css/style.css`
-Tambahkan aturan ini di `style.css` agar `<main class="main-home">` tidak punya margin/padding samping yang membatasi latar belakang penuh[cite: 44]:
-
-```css
-.main-home {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-```[cite: 44]
-
-Setelah `header.php` dan `style.css` diperbarui, tekan `Ctrl + F5` di browser untuk melihat hasilnya[cite: 44, 45]. Apakah gambar utama kampus sudah tampil penuh tanpa tepi kotak sekarang?
