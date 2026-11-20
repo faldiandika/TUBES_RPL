@@ -1520,3 +1520,152 @@ body:not(.is-home):not(.admin-body) .footer {
         padding-bottom: 4px;
     }
 }
+
+/* ==========================================================================
+   Tema Biru Transparan pada "Jelajahi Fakultas Kami" di Beranda
+   ========================================================================== */
+.home-fakultas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+}
+.surface-section.home-fakultas-blue {
+    background: linear-gradient(
+        145deg,
+        rgba(23, 37, 84, 0.86) 0%,
+        rgba(30, 58, 138, 0.80) 100%
+    );
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(147, 197, 253, 0.28);
+    color: #ffffff;
+}
+
+.blue-section-eyebrow {
+    display: inline-block;
+    padding: 4px 13px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fde68a;
+    margin-bottom: 10px;
+}
+
+.home-fakultas-blue .section-head h2 {
+    color: #ffffff;
+}
+
+.home-fakultas-blue .section-head p {
+    color: rgba(241, 245, 249, 0.86);
+}
+
+.home-fakultas-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(6, 11, 24, 0.22);
+    transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.26s ease,
+                border-color 0.26s ease,
+                box-shadow 0.26s ease;
+}
+
+.home-fakultas-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(147, 197, 253, 0.65);
+    box-shadow: 0 18px 36px rgba(6, 11, 24, 0.36);
+}
+
+.home-fakultas-media {
+    width: 100%;
+    height: 152px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.home-fakultas-media img {
+    width: 100%;
+    height: 152px;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.home-fakultas-card:hover .home-fakultas-media img {
+    transform: scale(1.04);
+}
+
+.home-fakultas-placeholder {
+    width: 100%;
+    height: 152px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.82), rgba(15, 23, 42, 0.88));
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-fakultas-placeholder span {
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.home-fakultas-body h3 {
+    margin: 0 0 12px;
+    font-size: 1.04rem;
+    font-weight: 600;
+    line-height: 1.38;
+    color: #ffffff;
+}
+
+.home-fakultas-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+.home-prodi-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #eff6ff;
+    background: rgba(30, 58, 138, 0.72);
+    border: 1px solid rgba(147, 197, 253, 0.38);
+}
+
+.home-card-arrow {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.78);
+    transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.home-fakultas-card:hover .home-card-arrow {
+    transform: translateX(4px);
+    color: #ffffff;
+}

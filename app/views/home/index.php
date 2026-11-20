@@ -1,5 +1,24 @@
 <?php
 $heroFoto = !empty($profil['foto']) ? e(img_url($profil['foto'])) : '';
+
+if (!function_exists('singkatan_fakultas_home')) {
+    function singkatan_fakultas_home(string $nama): string
+    {
+        if (preg_match('/\(([A-Z]{2,8})\)/', $nama, $m)) {
+            return $m[1];
+        }
+        $kata = preg_split('/\s+/', trim($nama));
+        $huruf = '';
+        foreach ($kata as $k) {
+            $bersih = preg_replace('/[^A-Za-z]/', '', $k);
+            if ($bersih !== '' && !in_array(strtolower($bersih), ['dan', 'ilmu', 'teknik', 'fakultas'])) {
+                $huruf .= strtoupper($bersih[0]);
+            }
+            if (strlen($huruf) >= 3) break;
+        }
+        return $huruf !== '' ? $huruf : 'UNT';
+    }
+}
 ?>
 <div class="home-page <?= $heroFoto ? 'has-hero-bg' : '' ?>">
     <?php if ($heroFoto): ?>
@@ -20,18 +39,35 @@ $heroFoto = !empty($profil['foto']) ? e(img_url($profil['foto'])) : '';
     </section>
 
     <div class="home-foreground">
-        <section id="jelajahi-fakultas" class="surface-section slide-panel reveal-on-scroll">
+        <section id="jelajahi-fakultas" class="surface-section home-fakultas-blue slide-panel reveal-on-scroll">
             <div class="section-head">
+                <span class="blue-section-eyebrow">Direktori Akademik</span>
                 <h2>Jelajahi Fakultas Kami</h2>
                 <p>Pilih fakultas untuk melihat informasi dan program studi yang tersedia.</p>
             </div>
-            <div class="grid">
+            <div class="grid home-fakultas-grid">
                 <?php foreach ($fakultas as $f): ?>
-                    <a class="card smooth-link" href="index.php?c=prodi&fakultas=<?= (int)$f['id'] ?>">
-                        <?php if (!empty($f['foto'])): ?>
-                            <img class="card-img" src="<?= e(img_url($f['foto'])) ?>" alt="<?= e($f['nama']) ?>">
-                        <?php endif; ?>
-                        <h3><?= e($f['nama']) ?></h3>
+                    <?php
+                    $jmlProdi = (int)($f['jumlah_prodi'] ?? 0);
+                    $singkatan = singkatan_fakultas_home((string)$f['nama']);
+                    ?>
+                    <a class="home-fakultas-card smooth-link" href="index.php?c=prodi&fakultas=<?= (int)$f['id'] ?>">
+                        <div class="home-fakultas-media">
+                            <?php if (!empty($f['foto'])): ?>
+                                <img src="<?= e(img_url($f['foto'])) ?>" alt="<?= e($f['nama']) ?>">
+                            <?php else: ?>
+                                <div class="home-fakultas-placeholder">
+                                    <span><?= e($singkatan) ?></span>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="home-fakultas-body">
+                            <h3><?= e($f['nama']) ?></h3>
+                            <div class="home-fakultas-foot">
+                                <span class="home-prodi-badge"><?= $jmlProdi ?> program studi</span>
+                                <span class="home-card-arrow">&rarr;</span>
+                            </div>
+                        </div>
                     </a>
                 <?php endforeach; ?>
             </div>
